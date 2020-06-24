@@ -3,6 +3,7 @@
 # Changes and simplifications by Marc Tönsing
 # V1.1 - Dec 15th 2019
 # GitHub Repository: https://github.com/mtoensing/RaspberryPiMinecraft
+# THANKS MOTENSING FOR THE Script!!!
 
 echo "Minecraft Server installation script by James Chambers and Marc Tönsing - V1.0"
 echo "Latest version always at https://github.com/mtoensing/RaspberryPiMinecraft"
@@ -26,27 +27,27 @@ mkdir minecraft
 cd minecraft
 
 echo "Getting latest Paper Minecraft server..."
-wget -O paperclip.jar https://papermc.io/api/v1/paper/1.15.2/latest/download
+wget -O server.jar https://launcher.mojang.com/v1/objects/a0d03225615ba897619220e256a266cb33a44b6b/server.jar
 
 echo "Building the Minecraft server... "
-java -jar -Xms800M -Xmx800M paperclip.jar
+java -jar -Xms800M -Xmx800M server.jar
 
 echo "Accepting the EULA... "
 echo eula=true > eula.txt
 
 echo "Grabbing start.sh from repository... "
-wget -O start.sh https://raw.githubusercontent.com/mtoensing/RaspberryPiMinecraft/master/start.sh
+wget -O start.sh https://raw.githubusercontent.com/wijiisaiah/RaspberryPiMinecraft/master/start.sh
 chmod +x start.sh
 
 echo "Oh wait. Checking for total memory available..."
 TotalMemory=$(awk '/MemTotal/ { printf "%.0f\n", $2/1024 }' /proc/meminfo)
 if [ $TotalMemory -lt 3000 ]; then
   echo "Sorry, have to grab low spec start.sh from repository... "
-  wget -O start.sh https://raw.githubusercontent.com/mtoensing/RaspberryPiMinecraft/master/start_lowspec.sh
+  wget -O start.sh https://raw.githubusercontent.com/wijiisaiah/RaspberryPiMinecraft/master/start_lowspec.sh
 fi
 
 echo "Grabbing restart.sh from repository... "
-wget -O restart.sh https://raw.githubusercontent.com/mtoensing/RaspberryPiMinecraft/master/restart.sh
+wget -O restart.sh https://raw.githubusercontent.com/wijiisaiah/RaspberryPiMinecraft/master/restart.sh
 chmod +x restart.sh
 
 echo "Enter a name for your server "
