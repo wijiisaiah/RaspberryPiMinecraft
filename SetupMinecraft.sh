@@ -27,7 +27,7 @@ mkdir minecraft
 cd minecraft
 
 echo "Getting latest Paper Minecraft server..."
-wget -O server.jar https://launcher.mojang.com/v1/objects/a0d03225615ba897619220e256a266cb33a44b6b/server.jar
+wget -O server.jar https://papermc.io/api/v1/paper/1.16.4/323/download
 
 echo "Building the Minecraft server... "
 java -jar -Xms800M -Xmx800M server.jar
