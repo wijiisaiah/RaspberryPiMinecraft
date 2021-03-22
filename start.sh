@@ -4,5 +4,5 @@
 # Minecraft Server startup script using screen
 echo "Starting Minecraft server.  To view window type screen -r minecraft."
 echo "To minimize the window and let the server run in the background, press Ctrl+A then Ctrl+D"
-cd /home/pi/minecraft/
+cd /home/pi/RaspberryPiMinecraft/minecraft/
 /usr/bin/screen -dmS minecraft /usr/bin/java -jar -Xms2600M -Xmx2600M /home/pi/minecraft/server.jar
